@@ -18,8 +18,8 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 
-    Examples
-    =============
+Examples
+=============
 
-    Installation/Usage:
-    *******************
+Installation/Usage:
+*******************
