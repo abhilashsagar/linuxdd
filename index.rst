@@ -1,4 +1,4 @@
-MyDriver Module
+Template Module
 ===============
 
 Introduction
