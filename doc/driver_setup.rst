@@ -15,7 +15,7 @@ Create or modify the ``drivers/hellodriver/Kconfig`` file with the following con
          This enables support for the Hello Driver.
 
 **Add entries to** ``drivers/hellodriver/Makefile``:
-
+-------------------
 Create or modify the ``drivers/hellodriver/Makefile`` file with the following content:
 
 .. code-block:: makefile
@@ -24,11 +24,11 @@ Create or modify the ``drivers/hellodriver/Makefile`` file with the following co
    obj-$(CONFIG_HELLO_DRIVER) += hello_driver.o
 
 **Create** ``drivers/hellodriver/hello_driver.c``:
-
+-------------------
 Create the ``hello_driver.c`` file inside the ``drivers/hellodriver/`` directory with your driver's implementation.
 
 **Include** ``drivers/hellodriver/Kconfig`` **in the top-level** ``drivers/Kconfig``:
-
+-------------------
 Open or create the ``drivers/Kconfig`` file and add the following line:
 
 .. code-block:: makefile
@@ -36,7 +36,7 @@ Open or create the ``drivers/Kconfig`` file and add the following line:
    source "drivers/hellodriver/Kconfig"
 
 **Modify the top-level** ``drivers/Makefile``:
-
+-------------------
 Open or create the ``drivers/Makefile`` file and add the following line to include your driver directory:
 
 .. code-block:: makefile
@@ -44,7 +44,7 @@ Open or create the ``drivers/Makefile`` file and add the following line to inclu
    obj-$(CONFIG_HELLO_DRIVER) += hellodriver/
 
 **Configure and build the kernel:**
-
+-------------------
 Run the following commands in the terminal:
 
 .. code-block:: bash
