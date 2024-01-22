@@ -7,7 +7,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
    Create or modify the ``drivers/hellodriver/Kconfig`` file with the following content::
 
-      .. code-block:: make
+      .. code-block:: makefile
 
          config HELLO_DRIVER
              tristate "Hello Driver Support"
@@ -18,7 +18,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
    Create or modify the ``drivers/hellodriver/Makefile`` file with the following content::
 
-      .. code-block:: make
+      .. code-block:: makefile
 
          # Specify the source file for your driver
          obj-$(CONFIG_HELLO_DRIVER) += hello_driver.o
@@ -31,7 +31,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
    Open or create the ``drivers/Kconfig`` file and add the following line::
 
-      .. code-block:: make
+      .. code-block:: makefile
 
          source "drivers/hellodriver/Kconfig"
 
@@ -39,7 +39,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
    Open or create the ``drivers/Makefile`` file and add the following line to include your driver directory::
 
-      .. code-block:: make
+      .. code-block:: makefile
 
          obj-$(CONFIG_HELLO_DRIVER) += hellodriver/
 
