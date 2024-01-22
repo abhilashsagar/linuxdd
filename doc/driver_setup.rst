@@ -16,7 +16,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
 2. **Add entries to** ``drivers/hellodriver/Makefile``:
 
-   Create or modify the ``drivers/hellodriver/Makefile`` file with the following content::
+   Create or modify the ``drivers/hellodriver/Makefile`` file with the following content
 
       .. code-block:: makefile
 
@@ -29,7 +29,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
 4. **Include** ``drivers/hellodriver/Kconfig`` **in the top-level** ``drivers/Kconfig``:
 
-   Open or create the ``drivers/Kconfig`` file and add the following line::
+   Open or create the ``drivers/Kconfig`` file and add the following line
 
       .. code-block:: makefile
 
@@ -45,7 +45,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
 6. **Configure and build the kernel:**
 
-   Run the following commands in the terminal::
+   Run the following commands in the terminal
 
       ```bash
       make menuconfig
@@ -61,7 +61,7 @@ Follow these steps to include your custom Linux kernel driver in the kernel sour
 
 7. **Directory Structure:**
 
-   Your directory structure should look like this::
+   Your directory structure should look like this
 
       .. code-block:: none
 
