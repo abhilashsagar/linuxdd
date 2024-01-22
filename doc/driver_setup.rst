@@ -4,7 +4,7 @@ Driver Installation and Configuration
 Follow these steps to include your custom Linux kernel driver in the kernel source code.
 
 **Add entries to** ``drivers/hellodriver/Kconfig``:
-
+-------------------
 Create or modify the ``drivers/hellodriver/Kconfig`` file with the following content:
 
 .. code-block:: makefile
