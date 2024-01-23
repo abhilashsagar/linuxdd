@@ -150,4 +150,38 @@ To explore the contents of the Device Tree in the sysfs file system, you can use
 
 This command lists the available nodes and properties in the device tree. Each node is represented as a directory, and properties are represented as files within those directories.
 
+Platform Driver Probing Process
+------------------------------
+
+.. raw:: svg
+
+   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" preserveAspectRatio="xMinYMin meet"><g transform="scale(1.0,1.0) translate(0,0)"> <rect x="0" y="0" width="1000" height="1000" fill="white"/> <text x="10" y="20" font-family="Arial" font-size="14" fill="black">+----------+</text><text x="10" y="40" font-family="Arial" font-size="14" fill="black">| Device   |</text><text x="10" y="60" font-family="Arial" font-size="14" fill="black">| Tree     |</text><text x="10" y="80" font-family="Arial" font-size="14" fill="black">+----------+</text><text x="100" y="100" font-family="Arial" font-size="14" fill="black">| Platform                    |</text><text x="100" y="120" font-family="Arial" font-size="14" fill="black">| Framework                  |</text><text x="100" y="140" font-family="Arial" font-size="14" fill="black">+-------------------------------</text><text x="100" y="160" font-family="Arial" font-size="14" fill="black">|                               |</text><text x="100" y="180" font-family="Arial" font-size="14" fill="black">| Scans device tree            |</text><text x="100" y="200" font-family="Arial" font-size="14" fill="black">|                               |</text><text x="100" y="220" font-family="Arial" font-size="14" fill="black">+-----------------------+</text><text x="100" y="240" font-family="Arial" font-size="14" fill="black">| Device Match          |</text><text x="100" y="260" font-family="Arial" font-size="14" fill="black">+-----------------------+</text><text x="100" y="280" font-family="Arial" font-size="14" fill="black">| (Compare with "mydriver,device")</text><text x="100" y="300" font-family="Arial" font-size="14" fill="black">|                               |</text><text x="100" y="320" font-family="Arial" font-size="14" fill="black">| Call Probe Function         |</text><text x="100" y="340" font-family="Arial" font-size="14" fill="black">| (mydriver_probe())          |</text><text x="100" y="360" font-family="Arial" font-size="14" fill="black">|                               |</text><text x="100" y="380" font-family="Arial" font-size="14" fill="black">+-----------------------+</text><text x="200" y="400" font-family="Arial" font-size="14" fill="black">|   - Extract device node     |</text><text x="200" y="420" font-family="Arial" font-size="14" fill="black">|   - Read device ID          |</text><text x="200" y="440" font-family="Arial" font-size="14" fill="black">|   - Log device ID           |</text><text x="200" y="460" font-family="Arial" font-size="14" fill="black">|   - **Your driver logic here** |</text><text x="200" y="480" font-family="Arial" font-size="14" fill="black">|                               |</text><text x="200" y="500" font-family="Arial" font-size="14" fill="black">+-----------------------+</text><text x="200" y="520" font-family="Arial" font-size="14" fill="black">|                               |</text><text x="200" y="540" font-family="Arial" font-size="14" fill="black">| Driver Attached             |</text><text x="200" y="560" font-family="Arial" font-size="14" fill="black">+-----------------------+</text><text x="300" y="580" font-family="Arial" font-size="14" fill="black">| Kernel (with driver)       |</text><text x="300" y="600" font-family="Arial" font-size="14" fill="black">+-----------------------+</text><text x="300" y="620" font-family="Arial" font-size="14" fill="black">            |</text><text x="300" y="640" font-family="Arial" font-size="14" fill="black">            | (Driver controls device)</text><text x="300" y="660" font-family="Arial" font-size="14" fill="black">            |</text><text x="300" y="680" font-family="Arial" font-size="14" fill="black">            | **No independent removal**</text><text x="300" y="700" font-family="Arial" font-size="14" fill="black">            |</text><text x="300" y="720" font-family="Arial" font-size="14" fill="black">            +-----------------------+</text></g></svg>
+
+
+The platform driver probing process involves the interaction between the Device Tree, the Platform Framework, and the Kernel. Here's a detailed breakdown:
+
+1. **Device Tree:**
+   Contains the device tree specification with a node named "mydriver,device" representing the platform device.
+
+2. **Platform Framework:**
+   The platform framework in the kernel scans the device tree for platform devices.
+
+3. **Device Match:**
+   The platform framework matches the device in the device tree based on compatibility strings, identifying the "mydriver,device" node.
+
+4. **Probe Function Call:**
+   If there is a match, the kernel calls the probe function (`mydriver_probe()`) associated with the platform driver.
+
+5. **Probe Function Execution:**
+   - The `mydriver_probe()` function performs tasks like extracting device information, reading device ID from the device tree, logging device ID, and executing your driver-specific logic.
+
+6. **Driver Attached:**
+   The driver is successfully attached to the platform device, gaining control over the device.
+
+7. **Kernel (with Driver):**
+   The kernel, with the attached driver, controls the platform device.
+
+8. **No Independent Removal:**
+   In this simplified scenario, the removal logic is not explicitly shown, and there's no independent removal step. The driver remains attached as long as the kernel is running.
+
 
