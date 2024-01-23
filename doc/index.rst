@@ -6,6 +6,7 @@ Welcome to My Linux Kernel Driver Documentation
 
    hellodriver
    driver_setup
+   hellodevicetree
 
 Indices and tables
 ==================
