@@ -132,3 +132,17 @@ Explanation
 3. **Device ID Property (`mydriver,device-id`):**
    - Sets a specific device ID for the driver to read during initialization.
    - The value (123) is just an example; replace it with the actual device ID you want to use.
+
+
+Device Tree Directory Listing
+------------------------------
+
+To explore the contents of the Device Tree in the sysfs file system, you can use the following command:
+
+.. code-block:: bash
+
+    ls /sys/firmware/devicetree/base
+
+This command lists the available nodes and properties in the device tree. Each node is represented as a directory, and properties are represented as files within those directories.
+
+
