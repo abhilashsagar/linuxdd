@@ -142,6 +142,11 @@ To explore the contents of the Device Tree in the sysfs file system, you can use
 .. code-block:: bash
 
     ls /sys/firmware/devicetree/base
+    #address-cells    cpus              model             pmu@4b000000
+    #size-cells       fixedregulator0   mydriver_node     serial-number
+    aliases           interrupt-parent  name              soc
+    chosen            leds              ocp
+    compatible        memory@80000000   opp-table
 
 This command lists the available nodes and properties in the device tree. Each node is represented as a directory, and properties are represented as files within those directories.
 
