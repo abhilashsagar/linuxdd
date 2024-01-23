@@ -152,7 +152,7 @@ This command lists the available nodes and properties in the device tree. Each n
 
 Platform Driver Probing Process
 ------------------------------
-.. image:: device_tree_probe.png
+.. image:: device_tree_probe.PNG
    :align: center
 
 The platform driver probing process involves the interaction between the Device Tree, the Platform Framework, and the Kernel. Here's a detailed breakdown:
