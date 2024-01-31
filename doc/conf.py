@@ -165,5 +165,9 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
+extensions = [
+    'sphinx.ext.graphviz',
+    # other extensions...
+]
 
 
