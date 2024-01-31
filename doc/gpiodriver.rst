@@ -103,10 +103,6 @@ In this documentation:
 
 - The Device Tree snippet is presented in a code block using the `.. code-block:: dts` directive.
 
-You can include this documentation in your Sphinx project by copying and pasting the rst code into your `.rst` file. Make sure to adjust the GPIO controller and pin values in the Device Tree snippet based on your actual hardware configuration. Additionally, ensure that the compatible strings match between the C code and the Device Tree snippet.
-
-If you have any further questions or need additional assistance, feel free to ask!
-
 .. _block-diagram-documentation:
 
 Block Diagram Documentation
