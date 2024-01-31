@@ -195,16 +195,8 @@ The platform driver probing process involves the interaction between the Device 
 
 .. _mydriver_driver:
 
-My Driver
-=========
-
-Overview
---------
-
-The `mydriver` module serves as a platform driver for a custom device in the Linux kernel. It interacts with the device tree to extract necessary information about the hardware.
-
-Module Code
------------
+Hello World Device tree with more properties 
+-------------------------------------------
 
 The module code consists of a structure to hold driver-specific data and functions to handle device probing and removal.
 
