@@ -114,7 +114,7 @@ Device Tree Block Diagram
 .. graphviz::
 
     digraph device_tree_diagram {
-        rankdir=LR;
+        rankdir=TB;
         node [shape=box];
         "Device Tree Specification" -> "Device Node: mydriver_node\n+ reg property: <0x10000000 0x1000>";
         "Device Node: mydriver_node\n+ reg property: <0x10000000 0x1000>" -> "Linux Kernel";
@@ -123,46 +123,26 @@ Device Tree Block Diagram
     }
 
 
+
 This diagram illustrates the flow from the Device Tree specification to the device driver's initialization and operation. The `reg` property in the Device Tree is a key part of this process, providing information about the memory-mapped region associated with the device. The driver uses this information for memory mapping and subsequent interactions with the device.
 
 GPIO Block Diagram
 ------------------
 
-.. raw:: ascii
+.. graphviz::
 
-    +----------------------------------------------------------+
-    |                       User Space                          |
-    |                    +------------------+                  |
-    |                    | User Application |                  |
-    |                    +------------------+                  |
-    |                            |                             |
-    |         Memory-Mapped     | Memory-Mapped               |
-    |         Access Interface  | Access Interface            |
-    |                            |                             |
-    +--------------------------->|<--------------------------+
-                                 |
-    +----------------------------------------------------------+
-    |                       Kernel Space                        |
-    |                    +------------------+                  |
-    |                    | Linux Kernel     |                  |
-    |                    | GPIO Subsystem   |                  |
-    |                    +------------------+                  |
-    |                            |                             |
-    |      Memory-Mapped Access | Memory-Mapped Access         |
-    |      Implementation       | Implementation               |
-    |                            |                             |
-    |        GPIO Controller     | GPIO Controller              |
-    |        (Memory-Mapped)      | (Memory-Mapped)               |
-    |                            |                             |
-    +--------------------------->|<--------------------------+
-                                 |
-    +----------------------------------------------------------+
-    |                       Hardware                            |
-    |                    +------------------+                  |
-    |                    | GPIO Controller  |                  |
-    |                    | (Processor IP)   |                  |
-    |                    +------------------+                  |
-    +----------------------------------------------------------+
+    digraph gpio_block_diagram {
+        rankdir=TB;
+        node [shape=box];
+        "User Space" -> "User Application";
+        "User Application" -> "Memory-Mapped Access Interface" [label="Memory-Mapped Access"];
+        "Memory-Mapped Access Interface" -> "Kernel Space";
+        "Kernel Space" -> "Linux Kernel";
+        "Linux Kernel" -> "Memory-Mapped Access Implementation";
+        "Memory-Mapped Access Implementation" -> "GPIO Controller (Memory-Mapped)" [label="Memory-Mapped Access"];
+        "GPIO Controller (Memory-Mapped)" -> "Hardware";
+    }
+
 
 In this GPIO block diagram:
 
