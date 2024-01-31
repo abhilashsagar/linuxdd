@@ -111,39 +111,17 @@ Block Diagram Documentation
 Device Tree Block Diagram
 -------------------------
 
-.. raw:: ascii
+.. graphviz::
 
-    +---------------------+
-    | Device Tree         |
-    | Specification       |
-    +---------------------+
-                 |
-    +---------------------+
-    | Device Node         |
-    |   mydriver_node     |
-    |   + reg property    |
-    |     <0x10000000 0x1000> |
-    +---------------------+
-                 |
-    +---------------------+
-    | Linux Kernel        |
-    |   Device Tree Parser|
-    |   Device Initialization|
-    +---------------------+
-                 |
-    +---------------------+
-    | mydriver Probe      |
-    |   + of_address_to_resource |
-    |   + Memory Mapping  |
-    +---------------------+
-                 |
-    +---------------------+
-    | Device Driver       |
-    |   Initialization    |
-    |   + Memory Mapping  |
-    |   + Access Device   |
-    |   + Operations      |
-    +---------------------+
+    digraph device_tree_diagram {
+        rankdir=LR;
+        node [shape=box];
+        "Device Tree Specification" -> "Device Node: mydriver_node\n+ reg property: <0x10000000 0x1000>";
+        "Device Node: mydriver_node\n+ reg property: <0x10000000 0x1000>" -> "Linux Kernel";
+        "Linux Kernel" -> "mydriver Probe\n+ of_address_to_resource\n+ Memory Mapping";
+        "mydriver Probe\n+ of_address_to_resource\n+ Memory Mapping" -> "Device Driver Initialization\n+ Memory Mapping\n+ Access Device\n+ Operations";
+    }
+
 
 This diagram illustrates the flow from the Device Tree specification to the device driver's initialization and operation. The `reg` property in the Device Tree is a key part of this process, providing information about the memory-mapped region associated with the device. The driver uses this information for memory mapping and subsequent interactions with the device.
 
