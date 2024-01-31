@@ -13,7 +13,7 @@ jobs:
           pip install sphinx sphinx_rtd_theme
       - name: Install Graphviz
         run: |
-          sudo apt-get install -y graphvi
+          sudo apt-get install -y graphviz
       - name: Sphinx build
         run: |
           sphinx-build doc _build
