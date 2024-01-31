@@ -196,7 +196,3 @@ In this GPIO block diagram:
 
 - **GPIO Controller:** The GPIO controller is part of the hardware (Processor IP) and includes registers for configuring GPIO pins, reading input states, and writing output values. The GPIO controller is accessible through memory-mapped addresses.
 
-.. note::
-    Adjust the formatting as needed to fit your documentation style and layout.
-
-You can include this documentation in your Sphinx project by copying and pasting the rst code into your `.rst` file. If you have any further questions or need additional assistance, feel free to ask!
