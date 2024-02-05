@@ -140,7 +140,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'WordCount.tex', 'WordCount Documentation',
-     'Harsha', 'manual'),
+     'Abhilash', 'manual'),
 ]
 
 
@@ -167,6 +167,7 @@ texinfo_documents = [
 
 extensions = [
     'sphinx.ext.graphviz',
+    'sphinx_copybutton'
     # other extensions...
 ]
 
