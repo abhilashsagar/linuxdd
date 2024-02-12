@@ -111,7 +111,7 @@ And make a file called `uEnv.txt` in the BOOT partition and copy the below code:
 
 Now you need to download the root file system. I have created a minimal file system using BusyBox:
 
-:ref:`Click here to view the existing file <rootfs.tar>`
+See :download:`Rootfs <rootfs.7z>`.
 
 
 Copy the downloaded file to rootfs partition and untar it:
