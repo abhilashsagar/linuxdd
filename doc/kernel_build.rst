@@ -114,7 +114,7 @@ Now you need to download the root file system. I have created a minimal file sys
 See :download:`Rootfs <rootfs.7z>`.
 
 
-Copy the downloaded file to rootfs partition and untar it:
+First you need to decompress it using 7z and then copy the rootfs.tar to rootfs partition and untar it:
 
 .. code-block:: bash
 
