@@ -4,6 +4,7 @@ Welcome to My Linux Kernel Driver Documentation
 .. toctree::
    :maxdepth: 2
 
+   kernel_build
    hellodriver
    driver_setup
    hellodevicetree
