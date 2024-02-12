@@ -1,6 +1,6 @@
 # Linux Device Drivers
 
-Template Module
+Hello World Driver
 ===============
 
 Introduction
